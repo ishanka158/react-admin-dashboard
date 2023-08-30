@@ -10,7 +10,8 @@ import Product from "./pages/products/Product";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Menu from "./components/menu/Menu";
-import "./styles/global.scss"
+import "./styles/global.scss";
+import Login from "./pages/login/login";
 
 
 function App() {
