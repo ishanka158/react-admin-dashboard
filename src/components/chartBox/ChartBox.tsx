@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 import "./chartBox.scss";
 import { ResponsiveContainer, LineChart, Line, Tooltip } from "recharts";
 
-type props = {
+type Props = {
   color:string;
   icon:string;
   title:string;
@@ -11,35 +11,35 @@ type props = {
   ChartData:object[];
 }
 
-const ChartBOx = (props: Props) => {
+const ChartBox = (Props: Props) => {
     return (
         
         <div className="chartBox">
 
             <div className="boxInfo">
                 <div className="title">
-                    <img src={props.icon} alt=""></img>
-                    <span>{props.title}</span>
+                    <img src={Props.icon} alt=""></img>
+                    <span>{Props.title}</span>
                 </div>
-                <h1>{props.number}</h1>
-                <Link to="/" style={{color:props.color}}>View all</Link>
+                <h1>{Props.number}</h1>
+                <Link to="/" style={{color:Props.color}}>View all</Link>
             </div>
             <div className="chartInfo">
                 <div className="chart">
                 <ResponsiveContainer width="99%" height="100%">
                     
-                    <LineChart data={props.chartData}>  
+                    <LineChart data={Props.chartData}>  
                     <Tooltip
                     contentStyle={{background:"transparent", border:"none"}}
                     labelStyle={{display:"none"}}
                     position={{x:10, y:60}}
                     />
-                    <Line type="monotone" dataKey={props.dataKey} stroke={props.color} strokeWidth={2}  dot={false}/>
+                    <Line type="monotone" dataKey={Props.dataKey} stroke={Props.color} strokeWidth={2}  dot={false}/>
                     </LineChart>
                 </ResponsiveContainer>
                 </div>
                 <div className="texts">
-                    <span className="percentage" style={{color: props.percentage < 0 ? "tomato":"limegreen"}}>{props.percentage}%</span>
+                    <span className="percentage" style={{color: Props.percentage < 0 ? "tomato":"limegreen"}}>{Props.percentage}%</span>
                     <span className="duration">this month</span>
                 </div>
             </div>
@@ -47,4 +47,4 @@ const ChartBOx = (props: Props) => {
     )
 }
 
-export default ChartBOx
+export default ChartBox
